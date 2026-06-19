@@ -1,0 +1,92 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    // Optional: check if user exists and is not banned
+    function isAllowedUser() {
+      return isSignedIn() &&
+        (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.status != 'banned' || true); // Assuming status can be banned
+    }
+
+    // Helper for admin (customize as needed)
+    function isAdmin() {
+      return isSignedIn() && exists(/databases/$(database)/documents/users/$(request.auth.uid)) && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    // Users Collection
+    match /users/{userId} {
+      // Users can modify their own profile; anyone authenticated can read
+      allow read: if isSignedIn();
+      // Allow creation/modification for oneself
+      allow write: if isSignedIn() && request.auth.uid == userId;
+      
+      // Subcollections within users (favorites, friends, recent_views)
+      match /{subcollection}/{documentId} {
+        allow read, write: if isSignedIn() && request.auth.uid == userId;
+      }
+    }
+
+    // Friend Requests
+    match /friend_requests/{requestId} {
+      allow create: if isSignedIn() && request.resource.data.fromId == request.auth.uid;
+      allow read, update, delete: if isSignedIn() && (resource.data.fromId == request.auth.uid || resource.data.toId == request.auth.uid);
+    }
+
+    // Dream Journals
+    match /dream_journals/{journalId} {
+      allow read, write: if isSignedIn() && (resource == null || resource.data.userId == request.auth.uid || request.resource.data.userId == request.auth.uid);
+    }
+    
+    // Community Messages & Chat
+    match /community_messages/{msgId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if isSignedIn() && (resource.data.userId == request.auth.uid || isAdmin());
+      
+      match /comments/{commentId} {
+        allow read: if isSignedIn();
+        allow create: if isSignedIn() && request.resource.data.userId == request.auth.uid;
+        allow update, delete: if isSignedIn() && (resource.data.userId == request.auth.uid || isAdmin());
+      }
+    }
+
+    // Private Chats
+    match /private_chats/{chatId} {
+      allow read, write: if isSignedIn() && chatId.matches('.*' + request.auth.uid + '.*'); // Basic check assuming chatId contains uid
+      
+      match /messages/{msgId} {
+         allow read: if isSignedIn();
+         allow create: if isSignedIn() && request.resource.data.senderId == request.auth.uid;
+         allow update, delete: if isSignedIn() && resource.data.senderId == request.auth.uid;
+      }
+    }
+
+    // Polls
+    match /polls/{pollId} {
+      allow read: if isSignedIn();
+      allow create, delete: if isAdmin();
+      allow update: if isSignedIn(); // allow users to vote
+    }
+
+    // Public / Shared Collections (Texts, Affirmations, Rouqya Presets)
+    match /texts/{textId} { allow read: if isSignedIn(); allow write: if isAdmin(); }
+    match /affirmations/{affId} { allow read: if isSignedIn(); allow write: if isAdmin(); }
+    match /rouqya_presets/{presetId} { allow read: if isSignedIn(); allow write: if isAdmin(); }
+    
+    // Admin / Metadata
+    match /admin_activity_logs/{logId} { allow read, write: if isAdmin(); }
+    match /community_notifications/{notifId} { allow read, write: if isSignedIn(); }
+    match /reports/{reportId} { allow create: if isSignedIn(); allow read, update, delete: if isAdmin(); }
+    match /community_presence/{presenceId} { allow read, write: if isSignedIn(); }
+
+    // Fallback
+    match /{document=**} {
+      allow read, write: if isSignedIn() && isAdmin();
+    }
+  }
+}

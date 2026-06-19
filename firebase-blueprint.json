@@ -1,0 +1,44 @@
+{
+  "entities": {
+    "TextReading": {
+      "title": "Text Reading",
+      "description": "A text content entry containing markdown content, title, category, and a cover image.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Title of the text reading" },
+        "content": { "type": "string", "description": "Markdown content" },
+        "category": { "type": "string", "description": "Category of the reading" },
+        "coverImageUrl": { "type": "string", "format": "uri", "description": "Download URL of the cover image" },
+        "authorId": { "type": "string", "description": "UID of the admin who created the reading" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "content", "category", "coverImageUrl", "authorId", "createdAt", "updatedAt"]
+    },
+    "Affirmation": {
+      "title": "Affirmation",
+      "description": "A daily spiritual affirmation.",
+      "type": "object",
+      "properties": {
+        "text": { "type": "string", "description": "The affirmation text" },
+        "author": { "type": "string", "description": "The author or source" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["text", "createdAt"]
+    }
+  },
+  "firestore": {
+    "texts/{textId}": {
+      "schema": {
+        "$ref": "#/entities/TextReading"
+      },
+      "description": "Stores all text reading entries."
+    },
+    "affirmations/{affirmationId}": {
+      "schema": {
+        "$ref": "#/entities/Affirmation"
+      },
+      "description": "Stores spiritual affirmations."
+    }
+  }
+}
