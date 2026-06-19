@@ -1,1 +1,2 @@
 Ce fichier a été ajouté pour vous permettre de forcer la synchronisation avec GitHub et de pousser les dernières corrections.
+Ceci est une nouvelle tentative avec les versions Android (AGP 8.7.2, Gradle 8.9, Java 17) stabilisées.

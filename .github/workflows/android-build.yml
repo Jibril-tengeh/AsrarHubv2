@@ -32,10 +32,13 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
-          java-version: '21'
+          java-version: '17'
 
       - name: Make gradlew executable
-        run: chmod +x android/gradlew
+        run: |
+          sudo apt-get update && sudo apt-get install -y dos2unix
+          dos2unix android/gradlew
+          chmod +x android/gradlew
 
       - name: Build Debug APK
         run: |
