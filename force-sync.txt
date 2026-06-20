@@ -1,2 +1,2 @@
 Ce fichier a été ajouté pour vous permettre de forcer la synchronisation avec GitHub et de pousser les dernières corrections.
-Ceci est une nouvelle tentative. J'ai détecté que le fichier "gradle-wrapper.jar" était corrompu, causant l'erreur (exit code 1). Le workflow a été mis à jour pour régénérer proprement le wrapper via "gradle wrapper" avant la compilation.
+Ceci est une nouvelle tentative. J'ai détecté que le fichier "gradle-wrapper.jar" était corrompu, et la version SDK de compilation a été mise à jour à 36 (au lieu de 35) pour être compatible avec Capacitor 8. Exportez/Pushez sur GitHub pour lancer le build !

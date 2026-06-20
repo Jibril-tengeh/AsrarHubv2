@@ -1,0 +1,10 @@
+{
+  "appId": "com.dummy.app",
+  "appName": "Dummy",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
+}
