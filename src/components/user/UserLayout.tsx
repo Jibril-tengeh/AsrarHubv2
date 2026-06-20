@@ -287,7 +287,7 @@ export default function UserLayout() {
         </header>
       )}
 
-      <main className={`flex-1 overflow-y-auto overflow-x-hidden relative ${!zenMode ? 'pb-[140px]' : ''}`}>
+      <main className={`flex-1 overflow-y-auto overflow-x-hidden relative ${!zenMode ? 'pb-[100px]' : ''}`}>
         <Outlet />
       </main>
 
@@ -343,8 +343,8 @@ export default function UserLayout() {
 
       {/* Bottom Navigation */}
       {!zenMode && (
-        <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-black/10 dark:border-white/10 pb-6 pt-2 backdrop-blur-md" style={{ backgroundColor: 'var(--theme-bg)' }}>
-          <div className="flex justify-around items-center h-16 max-w-md mx-auto w-full px-2">
+        <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-black/10 dark:border-white/10 pb-2 pt-2 backdrop-blur-md" style={{ backgroundColor: 'var(--theme-bg)', paddingBottom: 'max(0.5rem, env(safe-area-inset-bottom))' }}>
+          <div className="flex justify-around items-center h-14 max-w-md mx-auto w-full px-2">
             {tabs.map((tab) => (
               <NavLink
                 key={tab.name}

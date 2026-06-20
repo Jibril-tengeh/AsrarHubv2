@@ -10,7 +10,8 @@
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
     "cap:sync": "npx cap sync android",
-    "cap:open": "npx cap open android"
+    "cap:open": "npx cap open android",
+    "generate-icons": "npx @capacitor/assets generate --android --assetPath assets"
   },
   "dependencies": {
     "@capacitor/android": "^8.4.1",
@@ -39,6 +40,7 @@
     "vite": "^6.2.3"
   },
   "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
     "@capacitor/cli": "^8.4.1",
     "@types/express": "^4.17.21",
     "@types/node": "^22.14.0",
