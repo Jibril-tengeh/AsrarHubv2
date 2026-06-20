@@ -1,2 +1,2 @@
 Ce fichier a été ajouté pour vous permettre de forcer la synchronisation avec GitHub et de pousser les dernières corrections.
-Ceci est une nouvelle tentative. J'ai revu le design de la page "Outils" pour qu'il soit plus professionnel et dynamique : disposition en grille sur deux colonnes (style "bento"), animations d'apparition fluides, et réduction de la taille des cartes. Exportez/Pushez sur GitHub !
+Ceci est une nouvelle tentative. J'ai ajouté un message d'erreur plus clair pour expliquer le problème de l'envoi de SMS (blocage de la région par défaut de Firebase). Exportez/Pushez sur GitHub !

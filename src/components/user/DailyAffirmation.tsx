@@ -164,7 +164,7 @@ export default function DailyAffirmation() {
                 opacity: { duration: 0.2 },
                 scale: { duration: 0.2 }
               }}
-              className="w-full absolute"
+              className="w-full"
             >
               <p className="text-lg sm:text-xl font-medium leading-relaxed mb-3 text-neutral-800 dark:text-neutral-200">
                 "{affirmations[currentIndex].text}"

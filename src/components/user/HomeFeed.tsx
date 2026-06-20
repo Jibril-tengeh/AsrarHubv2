@@ -444,7 +444,7 @@ export default function HomeFeed() {
         {filteredReadings.length === 0 ? (
           <div className="col-span-12 text-center py-12 text-neutral-500 w-full">
             <FileText className="mx-auto h-12 w-12 opacity-50 mb-4" />
-            <p>No readings available yet.</p>
+            <p>Aucun article disponible pour le moment.</p>
           </div>
         ) : (
           filteredReadings.map((reading) => (

@@ -170,6 +170,8 @@ export default function UserLogin() {
       console.error("Erreur d'envoi du SMS:", err);
       if (err.code === 'auth/invalid-phone-number') {
         setError("Numéro de téléphone invalide (incluez l'indicatif ex:+33).");
+      } else if (err.code === 'auth/operation-not-allowed') {
+        setError("Firebase empêche l'envoi de SMS vers cette région par défaut pour éviter les abus. Vous devez l'autoriser dans Firebase Console -> Authentication -> Settings -> SMS Region Policy.");
       } else {
         setError(err.message || "Erreur d'envoi du SMS.");
       }
