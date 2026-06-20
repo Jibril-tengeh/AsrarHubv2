@@ -1,5 +1,9 @@
 {
 	"appId": "com.asrarhub.app",
 	"appName": "AsrarHub",
-	"webDir": "dist"
+	"webDir": "dist",
+	"server": {
+		"androidScheme": "https",
+		"cleartext": true
+	}
 }

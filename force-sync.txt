@@ -1,2 +1,2 @@
 Ce fichier a été ajouté pour vous permettre de forcer la synchronisation avec GitHub et de pousser les dernières corrections.
-Ceci est une nouvelle tentative. J'ai détecté que le fichier "gradle-wrapper.jar" était corrompu, et la version SDK de compilation a été mise à jour à 36 (au lieu de 35) pour être compatible avec Capacitor 8. Exportez/Pushez sur GitHub pour lancer le build !
+Ceci est une nouvelle tentative. J'ai restauré la configuration Firebase d'origine ("asrarhub-v2") dans le code (src/firebase.ts), car le problème de connexion venait probablement du fait que l'application essayait d'utiliser un autre projet par défaut. L'application devrait de nouveau pointer vers votre projet. Exportez sur GitHub pour tester la nouvelle APK!
