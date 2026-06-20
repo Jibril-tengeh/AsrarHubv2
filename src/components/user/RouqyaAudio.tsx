@@ -121,11 +121,11 @@ export default function RouqyaAudio() {
 
   return (
     <div className="max-w-xl mx-auto w-full px-4 pt-6 pb-24 min-h-screen" style={{ backgroundColor: 'var(--theme-bg)', color: 'var(--theme-text)' }}>
-      <div className="mb-10 text-center">
-        <div className="inline-flex items-center justify-center p-4 bg-teal-500/10 rounded-full mb-4">
-          <Shield className="w-12 h-12 text-teal-600" />
+      <div className="mb-6 text-center">
+        <div className="inline-flex items-center justify-center p-3 bg-teal-500/10 rounded-full mb-3">
+          <Shield className="w-8 h-8 text-teal-600" />
         </div>
-        <h1 className="text-3xl font-display font-bold tracking-tight mb-2">Moteur Audio de Rouqya</h1>
+        <h1 className="text-2xl font-display font-bold tracking-tight mb-1">Moteur Audio de Rouqya</h1>
         <p className="opacity-70 text-sm max-w-sm mx-auto leading-relaxed">
           Répétez un verset spécifique en boucle pour la purification nocturne.
         </p>

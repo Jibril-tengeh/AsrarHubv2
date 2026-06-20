@@ -14,8 +14,8 @@ export default function AudioFeed() {
   return (
     <div className="flex flex-col h-full bg-white dark:bg-black text-neutral-900 dark:text-white relative max-w-md mx-auto w-full object-cover">
       <div className="px-4 pt-12 pb-6">
-        <h1 className="text-3xl font-display font-bold tracking-tight mb-2">Listen</h1>
-        <p className="text-neutral-500 dark:text-neutral-400">Curated audio sessions.</p>
+        <h1 className="text-2xl font-display font-bold tracking-tight mb-1">Écouter</h1>
+        <p className="text-sm text-neutral-500 dark:text-neutral-400">Sessions audio organisées.</p>
       </div>
 
       <div className="flex-1 overflow-y-auto px-4 pb-32">

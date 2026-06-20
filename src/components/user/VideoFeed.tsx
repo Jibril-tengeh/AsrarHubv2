@@ -9,9 +9,9 @@ export default function VideoFeed() {
 
   return (
     <div className="max-w-md mx-auto w-full px-4 pt-12 pb-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-display font-bold tracking-tight mb-2 text-neutral-900 dark:text-white">Watch</h1>
-        <p className="text-neutral-500 dark:text-neutral-400">Visual learning and guidance.</p>
+      <div className="mb-6">
+        <h1 className="text-2xl font-display font-bold tracking-tight mb-1 text-neutral-900 dark:text-white">Regarder</h1>
+        <p className="text-sm text-neutral-500 dark:text-neutral-400">Apprentissage visuel et conseils.</p>
       </div>
 
       <div className="grid grid-cols-1 gap-6">

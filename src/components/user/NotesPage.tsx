@@ -59,10 +59,10 @@ export default function NotesPage() {
 
   return (
     <div className="max-w-3xl mx-auto w-full px-4 pt-6 pb-24 min-h-screen" style={{ backgroundColor: 'var(--theme-bg)', color: 'var(--theme-text)' }}>
-      <div className="mb-8 flex items-center justify-between">
+      <div className="mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-display font-bold tracking-tight mb-2">My Notes</h1>
-          <p className="opacity-70">Your personal highlights and journal.</p>
+          <h1 className="text-2xl font-display font-bold tracking-tight mb-1">Mes Notes</h1>
+          <p className="text-sm opacity-70">Vos pensées personnelles et surlignages.</p>
         </div>
       </div>
 

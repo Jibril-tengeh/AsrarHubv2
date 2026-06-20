@@ -74,13 +74,13 @@ export default function PrayerTimes() {
 
   return (
     <div className="max-w-md mx-auto p-4 pt-8 pb-24" style={{ backgroundColor: 'var(--theme-bg)', color: 'var(--theme-text)' }}>
-      <div className="mb-8 relative flex items-center pt-8 justify-center text-center">
+      <div className="mb-6 relative flex items-center pt-6 justify-center text-center">
           <Link to="/tools" className="absolute left-0 top-1/2 -translate-y-1/2 p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors">
-          <ArrowLeft className="w-6 h-6" />
+          <ArrowLeft className="w-5 h-5" />
         </Link>
         <div>
-          <h1 className="text-2xl font-bold mb-1">Heures de Prières</h1>
-          <p className="opacity-70 text-sm">Précision par géolocalisation</p>
+          <h1 className="text-xl font-bold mb-1">Heures de Prières</h1>
+          <p className="opacity-70 text-xs">Précision par géolocalisation</p>
           <div className="absolute right-0 top-1/2 -translate-y-1/2 mt-4">
              <ShareToCommunity text="Découvrez cet outil : Heures de Prières" />
           </div>
@@ -88,14 +88,14 @@ export default function PrayerTimes() {
       </div>
 
       {error && (
-        <div className="bg-red-500/10 text-red-500 p-4 rounded-xl mb-6 text-sm">
+        <div className="bg-red-500/10 text-red-500 p-3 rounded-xl mb-4 text-xs">
           {error}
         </div>
       )}
 
       {!coords && !error && (
-        <div className="p-8 text-center bg-black/5 dark:bg-white/5 rounded-3xl animate-pulse">
-          <MapPin className="w-8 h-8 mx-auto mb-4 opacity-50" />
+        <div className="p-6 text-center bg-black/5 dark:bg-white/5 rounded-2xl animate-pulse">
+          <MapPin className="w-6 h-6 mx-auto mb-3 opacity-50" />
           <p className="text-sm opacity-70">Recherche de votre position...</p>
         </div>
       )}
@@ -103,16 +103,16 @@ export default function PrayerTimes() {
       {prayerTimes && (
         <div className="space-y-4">
           {nextPrayer && (
-            <div className="bg-gradient-to-br from-amber-500 to-rose-500 text-white rounded-3xl p-6 shadow-xl mb-8 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-amber-500 to-rose-500 text-white rounded-2xl p-5 shadow-lg mb-6 relative overflow-hidden">
                <div className="relative z-10">
-                 <p className="text-white/80 text-sm font-medium uppercase tracking-widest mb-1">Prière Suivante</p>
-                 <h2 className="text-3xl font-bold mb-2">{mapPrayerName(nextPrayer.name)}</h2>
-                 <p className="text-2xl font-light">{nextPrayer.time.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</p>
+                 <p className="text-white/80 text-xs font-medium uppercase tracking-widest mb-1">Prière Suivante</p>
+                 <h2 className="text-2xl font-bold mb-1">{mapPrayerName(nextPrayer.name)}</h2>
+                 <p className="text-xl font-light">{nextPrayer.time.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</p>
                </div>
             </div>
           )}
 
-          <div className="bg-black/5 dark:bg-white/5 rounded-3xl p-4">
+          <div className="bg-black/5 dark:bg-white/5 rounded-2xl p-3">
             {['fajr', 'sunrise', 'dhuhr', 'asr', 'maghrib', 'isha'].map((prayerName) => {
               const time = prayerTimes.timeForPrayer(prayerName as any);
               const isNext = nextPrayer?.name === prayerName;

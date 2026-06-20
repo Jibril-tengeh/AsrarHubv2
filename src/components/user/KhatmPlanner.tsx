@@ -103,19 +103,19 @@ export default function KhatmPlanner() {
 
   return (
     <div className="max-w-3xl mx-auto w-full px-4 pt-6 pb-24 min-h-screen" style={{ backgroundColor: 'var(--theme-bg)', color: 'var(--theme-text)' }}>
-      <div className="flex justify-between items-center mb-8">
+      <div className="flex justify-between items-center mb-6">
         <div>
-          <h1 className="text-3xl font-display font-bold tracking-tight mb-2 flex items-center gap-2">
-            <Calendar className="w-8 h-8 text-amber-500" />
+          <h1 className="text-2xl font-display font-bold tracking-tight mb-1 flex items-center gap-2">
+            <Calendar className="w-6 h-6 text-amber-500" />
             Planificateur de Khatm
           </h1>
-          <p className="opacity-70">Suivez vos retraites et vos quarantaines.</p>
+          <p className="text-sm opacity-70">Suivez vos retraites et vos quarantaines.</p>
         </div>
         <button 
           onClick={() => setIsAdding(!isAdding)}
-          className="p-3 bg-amber-600 text-white rounded-xl shadow-lg hover:bg-amber-700 transition-colors"
+          className="p-2.5 bg-amber-600 text-white rounded-xl shadow-lg hover:bg-amber-700 transition-colors"
         >
-          <Plus className="w-6 h-6" />
+          <Plus className="w-5 h-5" />
         </button>
       </div>
 
@@ -126,7 +126,7 @@ export default function KhatmPlanner() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             onSubmit={handleAdd} 
-            className="bg-black/5 dark:bg-white/5 p-6 rounded-2xl mb-8 border border-black/5 dark:border-white/10 overflow-hidden"
+            className="bg-black/5 dark:bg-white/5 p-5 rounded-2xl mb-6 border border-black/5 dark:border-white/10 overflow-hidden"
           >
             <div className="space-y-4">
               <div>

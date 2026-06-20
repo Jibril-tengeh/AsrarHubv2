@@ -26,9 +26,9 @@ export default function Favorites() {
 
   return (
     <div className="max-w-3xl mx-auto w-full px-4 pt-6 pb-24 min-h-screen" style={{ backgroundColor: 'var(--theme-bg)', color: 'var(--theme-text)' }}>
-      <div className="mb-8">
-        <h1 className="text-3xl font-display font-bold tracking-tight mb-2">Favorites</h1>
-        <p className="opacity-70">Your personalized library, available offline.</p>
+      <div className="mb-6">
+        <h1 className="text-2xl font-display font-bold tracking-tight mb-1">Favoris</h1>
+        <p className="text-sm opacity-70">Votre bibliothèque personnalisée, disponible hors ligne.</p>
       </div>
 
       {favorites.length === 0 ? (
