@@ -91,8 +91,8 @@ export default function DailyAffirmation() {
 
   if (loading) {
     return (
-      <div className="bg-black/5 dark:bg-white/10 rounded-3xl p-6 sm:p-8 animate-pulse flex flex-col justify-center items-center h-48 mb-8">
-        <Quote className="w-8 h-8 opacity-20 mb-3" />
+      <div className="bg-black/5 dark:bg-white/10 rounded-2xl p-4 sm:p-5 animate-pulse flex flex-col justify-center items-center h-32 mb-6">
+        <Quote className="w-6 h-6 opacity-20 mb-2" />
       </div>
     );
   }
@@ -120,37 +120,37 @@ export default function DailyAffirmation() {
   };
 
   return (
-    <div className="relative bg-gradient-to-br from-indigo-500/10 to-purple-500/10 dark:from-indigo-400/10 dark:to-purple-400/10 rounded-3xl p-6 sm:p-8 border border-indigo-500/20 dark:border-indigo-400/20 overflow-hidden shadow-sm mb-8 min-h-[12rem] flex flex-col">
-      <div className="absolute top-0 right-0 p-6 opacity-5 pointer-events-none">
-        <Quote className="w-24 h-24 sm:w-32 sm:h-32 -mr-4 -mt-4" />
+    <div className="relative bg-gradient-to-br from-indigo-500/10 to-purple-500/10 dark:from-indigo-400/10 dark:to-purple-400/10 rounded-2xl p-5 border border-indigo-500/20 dark:border-indigo-400/20 overflow-hidden shadow-sm mb-6 flex flex-col">
+      <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+        <Quote className="w-20 h-20 -mr-2 -mt-2" />
       </div>
       
       <div className="relative z-10 flex-1 flex flex-col">
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
-            <Quote className="w-4 h-4 text-indigo-500 dark:text-indigo-400" />
-            <h2 className="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-300">Affirmations & Sagesse</h2>
+            <Quote className="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400" />
+            <h2 className="text-[10px] font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-300">Affirmations & Sagesse</h2>
           </div>
           
           {affirmations.length > 1 && (
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
               <button 
                 onClick={prevSlide}
                 className="p-1 rounded-full bg-white/50 dark:bg-black/20 hover:bg-white/80 dark:hover:bg-black/40 transition-colors text-indigo-700 dark:text-indigo-300 backdrop-blur-sm"
               >
-                <ChevronLeft className="w-4 h-4" />
+                <ChevronLeft className="w-3.5 h-3.5" />
               </button>
               <button 
                 onClick={nextSlide}
                 className="p-1 rounded-full bg-white/50 dark:bg-black/20 hover:bg-white/80 dark:hover:bg-black/40 transition-colors text-indigo-700 dark:text-indigo-300 backdrop-blur-sm"
               >
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight className="w-3.5 h-3.5" />
               </button>
             </div>
           )}
         </div>
         
-        <div className="relative flex-1 flex items-center min-h-[5rem]">
+        <div className="relative flex-1 flex flex-col justify-center min-h-[4rem]">
           <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div
               key={currentIndex}
@@ -166,12 +166,12 @@ export default function DailyAffirmation() {
               }}
               className="w-full"
             >
-              <p className="text-lg sm:text-xl font-medium leading-relaxed mb-3 text-neutral-800 dark:text-neutral-200">
+              <p className="text-[15px] sm:text-base font-medium leading-snug mb-2 text-neutral-800 dark:text-neutral-200">
                 "{affirmations[currentIndex].text}"
               </p>
               
               {affirmations[currentIndex].author && (
-                <div className="text-sm font-semibold opacity-60">
+                <div className="text-xs font-semibold opacity-60">
                   — {affirmations[currentIndex].author}
                 </div>
               )}
@@ -180,7 +180,7 @@ export default function DailyAffirmation() {
         </div>
 
         {affirmations.length > 1 && (
-          <div className="flex justify-center gap-1 mt-6">
+          <div className="flex justify-center gap-1 mt-4">
             {affirmations.map((_, idx) => (
               <div 
                 key={idx} 

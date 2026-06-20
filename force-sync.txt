@@ -1,2 +1,2 @@
 Ce fichier a été ajouté pour vous permettre de forcer la synchronisation avec GitHub et de pousser les dernières corrections.
-Ceci est une nouvelle tentative. J'ai ajouté un message d'erreur plus clair pour expliquer le problème de l'envoi de SMS (blocage de la région par défaut de Firebase). Exportez/Pushez sur GitHub !
+Ceci est une nouvelle tentative. J'ai réduit la taille de la carte "Affirmations & Sagesse" pour qu'elle prenne moins de hauteur, soit plus rectangulaire et s'adapte mieux sur les petits écrans. Les textes, marges (padding) et icônes ont été réduits pour préserver un affichage esthétique et compact. Exportez/Pushez sur GitHub !
