@@ -1,2 +1,2 @@
 Ce fichier a été ajouté pour vous permettre de forcer la synchronisation avec GitHub et de pousser les dernières corrections.
-Ceci est une nouvelle tentative avec Java 21, et les versions de base de Capacitor 8 (AGP 8.13.0, Gradle 8.14.3).
+Ceci est une nouvelle tentative. J'ai détecté que le fichier "gradle-wrapper.jar" était corrompu, causant l'erreur (exit code 1). Le workflow a été mis à jour pour régénérer proprement le wrapper via "gradle wrapper" avant la compilation.
